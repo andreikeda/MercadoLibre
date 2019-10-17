@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		D4FDEC3C2359094200507092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FDEC3A2359094200507092 /* LaunchScreen.storyboard */; };
 		D4FDEC472359094200507092 /* Mercado_LibreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC462359094200507092 /* Mercado_LibreTests.swift */; };
 		D4FDEC522359094200507092 /* Mercado_LibreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC512359094200507092 /* Mercado_LibreUITests.swift */; };
+		D4FDEC6123590B8C00507092 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC6023590B8C00507092 /* APIHelper.swift */; };
+		D4FDEC6423590E3E00507092 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC6323590E3E00507092 /* ResultModel.swift */; };
+		D4FDEC662359111C00507092 /* AttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC652359111C00507092 /* AttributeModel.swift */; };
 		D513665DD866B1C9A64BF8B9 /* Pods_Mercado_Libre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D71AC167FB3E5016535E67 /* Pods_Mercado_Libre.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,9 @@
 		D4FDEC4D2359094200507092 /* Mercado LibreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mercado LibreUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FDEC512359094200507092 /* Mercado_LibreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercado_LibreUITests.swift; sourceTree = "<group>"; };
 		D4FDEC532359094200507092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4FDEC6023590B8C00507092 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		D4FDEC6323590E3E00507092 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		D4FDEC652359111C00507092 /* AttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +165,19 @@
 		D4FDEC5F2359099C00507092 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D4FDEC6223590E0F00507092 /* Model */,
+				D4FDEC6023590B8C00507092 /* APIHelper.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		D4FDEC6223590E0F00507092 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4FDEC652359111C00507092 /* AttributeModel.swift */,
+				D4FDEC6323590E3E00507092 /* ResultModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F347C60A9C9CAB0C2B0335AE /* Pods */ = {
@@ -173,7 +190,6 @@
 				1FE3C9D247BA0912DC263D9F /* Pods-Mercado LibreTests.debug.xcconfig */,
 				325FABCD59467CA5AD82405C /* Pods-Mercado LibreTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -416,8 +432,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FDEC662359111C00507092 /* AttributeModel.swift in Sources */,
+				D4FDEC6123590B8C00507092 /* APIHelper.swift in Sources */,
 				D4FDEC342359093F00507092 /* ViewController.swift in Sources */,
 				D4FDEC302359093F00507092 /* AppDelegate.swift in Sources */,
+				D4FDEC6423590E3E00507092 /* ResultModel.swift in Sources */,
 				D4FDEC322359093F00507092 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
