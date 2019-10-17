@@ -1,0 +1,6 @@
+framework module Pods_Mercado_LibreTests {
+  umbrella header "Pods-Mercado LibreTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
