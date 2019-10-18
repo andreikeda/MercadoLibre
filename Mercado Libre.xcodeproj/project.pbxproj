@@ -11,7 +11,6 @@
 		A4C352236CF2709C36959E41 /* Pods_Mercado_LibreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B83189E020F53289E00302 /* Pods_Mercado_LibreTests.framework */; };
 		D4FDEC302359093F00507092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC2F2359093F00507092 /* AppDelegate.swift */; };
 		D4FDEC322359093F00507092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC312359093F00507092 /* SceneDelegate.swift */; };
-		D4FDEC342359093F00507092 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC332359093F00507092 /* ViewController.swift */; };
 		D4FDEC372359093F00507092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FDEC352359093F00507092 /* Main.storyboard */; };
 		D4FDEC392359094100507092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FDEC382359094100507092 /* Assets.xcassets */; };
 		D4FDEC3C2359094200507092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FDEC3A2359094200507092 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,7 @@
 		D4FDEC6123590B8C00507092 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC6023590B8C00507092 /* APIHelper.swift */; };
 		D4FDEC6423590E3E00507092 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC6323590E3E00507092 /* ResultModel.swift */; };
 		D4FDEC662359111C00507092 /* AttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC652359111C00507092 /* AttributeModel.swift */; };
+		D4FDEC6D235927E400507092 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDEC6C235927E400507092 /* SearchViewController.swift */; };
 		D513665DD866B1C9A64BF8B9 /* Pods_Mercado_Libre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D71AC167FB3E5016535E67 /* Pods_Mercado_Libre.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,6 @@
 		D4FDEC2C2359093F00507092 /* Mercado Libre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mercado Libre.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FDEC2F2359093F00507092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4FDEC312359093F00507092 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D4FDEC332359093F00507092 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D4FDEC362359093F00507092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4FDEC382359094100507092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4FDEC3B2359094200507092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		D4FDEC6023590B8C00507092 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		D4FDEC6323590E3E00507092 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		D4FDEC652359111C00507092 /* AttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeModel.swift; sourceTree = "<group>"; };
+		D4FDEC6C235927E400507092 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,10 +132,10 @@
 		D4FDEC2E2359093F00507092 /* Mercado Libre */ = {
 			isa = PBXGroup;
 			children = (
+				D4FDEC672359279200507092 /* Search */,
 				D4FDEC5F2359099C00507092 /* Core */,
 				D4FDEC2F2359093F00507092 /* AppDelegate.swift */,
 				D4FDEC312359093F00507092 /* SceneDelegate.swift */,
-				D4FDEC332359093F00507092 /* ViewController.swift */,
 				D4FDEC352359093F00507092 /* Main.storyboard */,
 				D4FDEC382359094100507092 /* Assets.xcassets */,
 				D4FDEC3A2359094200507092 /* LaunchScreen.storyboard */,
@@ -178,6 +178,46 @@
 				D4FDEC6323590E3E00507092 /* ResultModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D4FDEC672359279200507092 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D4FDEC6B235927BD00507092 /* Interactor */,
+				D4FDEC6A235927B600507092 /* Presenter */,
+				D4FDEC69235927AE00507092 /* Router */,
+				D4FDEC68235927A600507092 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D4FDEC68235927A600507092 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4FDEC6C235927E400507092 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4FDEC69235927AE00507092 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D4FDEC6A235927B600507092 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D4FDEC6B235927BD00507092 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		F347C60A9C9CAB0C2B0335AE /* Pods */ = {
@@ -433,8 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FDEC662359111C00507092 /* AttributeModel.swift in Sources */,
+				D4FDEC6D235927E400507092 /* SearchViewController.swift in Sources */,
 				D4FDEC6123590B8C00507092 /* APIHelper.swift in Sources */,
-				D4FDEC342359093F00507092 /* ViewController.swift in Sources */,
 				D4FDEC302359093F00507092 /* AppDelegate.swift in Sources */,
 				D4FDEC6423590E3E00507092 /* ResultModel.swift in Sources */,
 				D4FDEC322359093F00507092 /* SceneDelegate.swift in Sources */,
