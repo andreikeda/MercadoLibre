@@ -15,10 +15,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ur5-3N-mLH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ur5-3N-mLH">
                                 <rect key="frame" x="0.0" y="132" width="414" height="719"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" rowHeight="157" id="kw1-EF-FTr" customClass="SearchViewTableCell" customModule="Mercado_Libre" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="157"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kw1-EF-FTr" id="Q5b-PK-iLp">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="157"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1EO-cB-EMj">
+                                                    <rect key="frame" x="14" y="16" width="111" height="125"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZb-Ch-eX6">
+                                                    <rect key="frame" x="152" y="16" width="196" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="196" id="kJO-ma-glm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xy6-RR-n4p">
+                                                    <rect key="frame" x="152" y="117" width="223" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em9-MN-ete">
+                                                    <rect key="frame" x="152" y="93" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xy6-RR-n4p" firstAttribute="bottom" secondItem="1EO-cB-EMj" secondAttribute="bottom" id="AJ0-Pz-vgc"/>
+                                                <constraint firstItem="zZb-Ch-eX6" firstAttribute="leading" secondItem="1EO-cB-EMj" secondAttribute="trailing" constant="16" id="MvU-Zy-9Cs"/>
+                                                <constraint firstItem="Xy6-RR-n4p" firstAttribute="top" secondItem="em9-MN-ete" secondAttribute="bottom" constant="8" id="REf-Za-l3x"/>
+                                                <constraint firstAttribute="bottom" secondItem="1EO-cB-EMj" secondAttribute="bottom" constant="16" id="TGu-Cn-Mnh"/>
+                                                <constraint firstItem="1EO-cB-EMj" firstAttribute="leading" secondItem="Q5b-PK-iLp" secondAttribute="leading" constant="16" id="WQ0-WX-TFa"/>
+                                                <constraint firstItem="zZb-Ch-eX6" firstAttribute="top" secondItem="1EO-cB-EMj" secondAttribute="top" id="l64-UU-uue"/>
+                                                <constraint firstItem="1EO-cB-EMj" firstAttribute="top" secondItem="Q5b-PK-iLp" secondAttribute="top" constant="16" id="nRE-2h-8lF"/>
+                                                <constraint firstItem="em9-MN-ete" firstAttribute="top" secondItem="zZb-Ch-eX6" secondAttribute="bottom" constant="16" id="ryt-ez-r24"/>
+                                                <constraint firstItem="Xy6-RR-n4p" firstAttribute="leading" secondItem="1EO-cB-EMj" secondAttribute="trailing" constant="16" id="sGZ-oi-Tbn"/>
+                                                <constraint firstItem="em9-MN-ete" firstAttribute="leading" secondItem="1EO-cB-EMj" secondAttribute="trailing" constant="16" id="tWJ-NB-uNy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priceLabel" destination="Xy6-RR-n4p" id="pHW-dk-bk2"/>
+                                            <outlet property="sellQuantityLabel" destination="em9-MN-ete" id="odi-vW-8QI"/>
+                                            <outlet property="thumbnail" destination="1EO-cB-EMj" id="nUr-2U-pAS"/>
+                                            <outlet property="titleLabel" destination="zZb-Ch-eX6" id="h4X-6J-Gxz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goR-qA-kF7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -27,7 +81,7 @@
                                     <navigationItem title="Title" id="yJk-pt-9Or"/>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="teste" translatesAutoresizingMaskIntoConstraints="NO" id="ryQ-vU-QcX">
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ryQ-vU-QcX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
