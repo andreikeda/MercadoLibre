@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SDWebImage
 import UIKit
 
 protocol SearchViewControllerProtocol {
@@ -39,7 +40,6 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: SearchViewControllerProtocol {
-    
     func dismissProgress() {
         progressIndicator.stopAnimating()
         progressIndicator.removeFromSuperview()
@@ -47,6 +47,7 @@ extension SearchViewController: SearchViewControllerProtocol {
     
     func showError(error: String) {
         let alert = UIAlertController(title: "Erro!", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
@@ -62,7 +63,9 @@ extension SearchViewController: SearchViewControllerProtocol {
 }
 
 extension SearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.onSearchResultItemSelected(result: results[indexPath.row])
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -73,6 +76,11 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! SearchViewTableCell
         cell.titleLabel.text = results[indexPath.row].title
+        if let thumb = results[indexPath.row].thumbnail {
+            cell.thumbnail.sd_setImage(with: URL(string: thumb), placeholderImage: UIImage(named: "ProductImage"))
+        }
+        cell.priceLabel.text = results[indexPath.row].formatPrice()
+        cell.sellQuantityLabel.text = results[indexPath.row].formatSoldQuantity()
         return cell
     }
 }

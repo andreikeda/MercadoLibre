@@ -10,6 +10,7 @@ import Foundation
 
 protocol SearchViewPresenterProtocol {
     func onSearchButtonClicked(query: String)
+    func onSearchResultItemSelected(result: ResultModel)
 }
 
 protocol SearchViewInteractorOutputProtocol {
@@ -31,6 +32,10 @@ extension SearchViewPresenter: SearchViewPresenterProtocol {
     func onSearchButtonClicked(query: String) {
         view.showProgress()
         interactor.search(query: query)
+    }
+    
+    func onSearchResultItemSelected(result: ResultModel) {
+        
     }
 }
 

@@ -7,6 +7,11 @@
 //
 import Foundation
 
+protocol ResultModelProtocol {
+    func formatSoldQuantity() -> String
+    func formatPrice() -> String
+}
+
 class ResultModel {
     
     let id: String
@@ -28,6 +33,16 @@ class ResultModel {
         self.soldQuantity = soldQuantity
         self.thumbnail = thumbnail
         self.attributes = attributes
+    }
+}
+
+extension ResultModel: ResultModelProtocol {
+    func formatPrice() -> String {
+        return "\(currencyId)$ \(price)"
+    }
+    
+    func formatSoldQuantity() -> String {
+        return "Vendidos: \(soldQuantity)"
     }
 }
 

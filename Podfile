@@ -7,6 +7,7 @@ target 'Mercado Libre' do
 
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'Mercado LibreTests' do
     inherit! :search_paths
