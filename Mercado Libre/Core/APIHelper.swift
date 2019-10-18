@@ -53,6 +53,7 @@ class APIHelper {
                         currencyId: resJson["currency_id"].rawValue as! String,
                         availableQuantity: resJson["available_quantity"].rawValue as! NSNumber,
                         soldQuantity: resJson["sold_quantity"].rawValue as! NSNumber,
+                        thumbnail: resJson["thumbnail"].rawValue as? String,
                         attributes: attributes)
                     print("title: \(resultModel.title)\nprice: \(resultModel.currencyId) \(resultModel.price)\n")
                 }
