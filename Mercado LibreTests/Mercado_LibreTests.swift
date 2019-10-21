@@ -10,25 +10,58 @@ import XCTest
 @testable import Mercado_Libre
 
 class Mercado_LibreTests: XCTestCase {
+    
+    var sut: ResultModel!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        sut = ResultModel(id: "abd", title: "motorola", price: 12000, currencyId: "ARS", condition: "new", availableQuantity: 120, soldQuantity: 10, thumbnail: nil, acceptsMercadoPago: true, attributes: [AttributeModel](), tags: ["good_quality_picture", "good_quality_thumbnail", "brand_verified"])
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFormatConditionOutput() {
+        let text = sut.formatCondition()
+        XCTAssertEqual(text, "Estado de uso:\nnew")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testFormatTagsOutput() {
+        let text = sut.formatTags()
+        XCTAssertEqual(text, "good_quality_picture, good_quality_thumbnail, brand_verified, ")
+    }
+    
+    func testFormatPriceOutput() {
+        let text = sut.formatPrice()
+        XCTAssertEqual(text, "ARS$ 12000")
+    }
+    
+    func testFormatAcceptsMercadoPagoOutput() {
+        let text = sut.formatMercadoPago()
+        XCTAssertEqual(text, "Aceitamos\nMercadoPago")
+    }
+    
+    func testFormatNotAcceptsMercadoPagoOutput() {
+        sut.acceptsMercadoPago = false
+        let text = sut.formatMercadoPago()
+        XCTAssertEqual(text, "Não aceitamos\nMercadoPago")
+    }
+    
+    func testFormatMinQuantityOutput() {
+        let text = sut.formatMinQuantity()
+        XCTAssertEqual(text, "Min: 1")
+    }
+    
+    func testFormatSoldQuantityOutput() {
+        let text = sut.formatSoldQuantity()
+        XCTAssertEqual(text, "Vendidos: 10")
+    }
+    
+    func testFormatAvailableQuantityOutput() {
+        let text = sut.formatAvailableQuantity()
+        XCTAssertEqual(text, "Máx: 120")
     }
 
 }

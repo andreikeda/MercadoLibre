@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SearchViewPresenterProtocol {
     func onSearchButtonClicked(query: String)
-    func onSearchResultItemSelected(result: ResultModel)
+    func onSearchResultItemSelected()
 }
 
 protocol SearchViewInteractorOutputProtocol {
@@ -21,28 +22,38 @@ protocol SearchViewInteractorOutputProtocol {
 class SearchViewPresenter {
     
     private var view: SearchViewControllerProtocol
+    private var router: SearchViewRouterProtocol
     private lazy var interactor: SearchViewInteractorProtocol = SearchViewInteractor(output: self)
     
     init(view: SearchViewControllerProtocol) {
         self.view = view
+        router = SearchViewRouter(viewController: view as! UIViewController)
     }
 }
 
 extension SearchViewPresenter: SearchViewPresenterProtocol {
     func onSearchButtonClicked(query: String) {
-        view.showProgress()
-        interactor.search(query: query)
+        if query.isEmpty {
+            view.showError(error: "Digite o que deseja procurar")
+        } else {
+            view.showProgress()
+            interactor.search(query: query)
+        }
     }
     
-    func onSearchResultItemSelected(result: ResultModel) {
-        
+    func onSearchResultItemSelected() {
+        router.performSegue()
     }
 }
 
 extension SearchViewPresenter: SearchViewInteractorOutputProtocol {
     func onSearchResultOk(result: [ResultModel]) {
         view.dismissProgress()
-        view.showSearchResult(result: result)
+        if (result.count > 0) {
+            view.showSearchResult(result: result)
+        } else {
+            view.showError(error: "Não foram encontrados resultados.")
+        }
     }
     
     func onSearchResultError(message: String) {

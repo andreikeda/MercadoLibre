@@ -28,6 +28,7 @@ class SearchViewController: UIViewController {
     private lazy var presenter: SearchViewPresenterProtocol = SearchViewPresenter(view: self)
     private var progressIndicator = UIActivityIndicatorView(style: .large)
     private var results: [ResultModel] = [ResultModel]()
+    private var selectedResult: ResultModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,12 @@ class SearchViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DetailViewController {
+            vc.result = selectedResult
+        }
     }
 }
 
@@ -64,7 +71,8 @@ extension SearchViewController: SearchViewControllerProtocol {
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.onSearchResultItemSelected(result: results[indexPath.row])
+        selectedResult = self.results[indexPath.row]
+        presenter.onSearchResultItemSelected()
     }
 }
 

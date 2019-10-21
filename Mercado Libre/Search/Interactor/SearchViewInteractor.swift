@@ -54,15 +54,24 @@ extension SearchViewInteractor: SearchViewRequestProtocol {
                     attrs.append(attr)
                 }
             }
+            var tags: [String] = [String]()
+            if (json["tags"].count > 0) {
+                for (_, tag): (String, JSON) in json["tags"] {
+                    tags.append(tag.rawString()!)
+                }
+            }
             let resultModel = ResultModel(
                 id: json["id"].rawValue as! String,
                 title: json["title"].rawValue as! String,
                 price: json["price"].rawValue as! NSNumber,
                 currencyId: json["currency_id"].rawValue as! String,
+                condition: json["condition"].rawValue as! String,
                 availableQuantity: json["available_quantity"].rawValue as! NSNumber,
                 soldQuantity: json["sold_quantity"].rawValue as! NSNumber,
                 thumbnail: json["thumbnail"].rawValue as? String,
-                attributes: attrs)
+                acceptsMercadoPago: json["accepts_mercadopago"].rawValue as! Bool,
+                attributes: attrs,
+                tags: tags)
             results.append(resultModel)
         }
         output.onSearchResultOk(result: results)
